@@ -48,10 +48,10 @@ RM = /home/hyj/QT/clion-2017.1.2/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hyj/slam_project/svo
+CMAKE_SOURCE_DIR = /home/hyj/slam_project/svo_edgelete
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hyj/slam_project/svo/cmake-build-debug
+CMAKE_BINARY_DIR = /home/hyj/slam_project/svo_edgelete/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyj/slam_project/svo/cmake-build-debug/CMakeFiles /home/hyj/slam_project/svo/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyj/slam_project/svo_edgelete/cmake-build-debug/CMakeFiles /home/hyj/slam_project/svo_edgelete/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyj/slam_project/svo/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyj/slam_project/svo_edgelete/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,19 @@ test_live_vo: cmake_check_build_system
 test_live_vo/fast:
 	$(MAKE) -f CMakeFiles/test_live_vo.dir/build.make CMakeFiles/test_live_vo.dir/build
 .PHONY : test_live_vo/fast
+
+#=============================================================================
+# Target rules for targets named test_pipel_euroc
+
+# Build rule for target.
+test_pipel_euroc: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_pipel_euroc
+.PHONY : test_pipel_euroc
+
+# fast build rule for target.
+test_pipel_euroc/fast:
+	$(MAKE) -f CMakeFiles/test_pipel_euroc.dir/build.make CMakeFiles/test_pipel_euroc.dir/build
+.PHONY : test_pipel_euroc/fast
 
 #=============================================================================
 # Target rules for targets named test_pipeline
@@ -905,6 +918,33 @@ test/test_live_vo.cpp.s:
 	$(MAKE) -f CMakeFiles/test_live_vo.dir/build.make CMakeFiles/test_live_vo.dir/test/test_live_vo.cpp.s
 .PHONY : test/test_live_vo.cpp.s
 
+test/test_pipel_euroc.o: test/test_pipel_euroc.cpp.o
+
+.PHONY : test/test_pipel_euroc.o
+
+# target to build an object file
+test/test_pipel_euroc.cpp.o:
+	$(MAKE) -f CMakeFiles/test_pipel_euroc.dir/build.make CMakeFiles/test_pipel_euroc.dir/test/test_pipel_euroc.cpp.o
+.PHONY : test/test_pipel_euroc.cpp.o
+
+test/test_pipel_euroc.i: test/test_pipel_euroc.cpp.i
+
+.PHONY : test/test_pipel_euroc.i
+
+# target to preprocess a source file
+test/test_pipel_euroc.cpp.i:
+	$(MAKE) -f CMakeFiles/test_pipel_euroc.dir/build.make CMakeFiles/test_pipel_euroc.dir/test/test_pipel_euroc.cpp.i
+.PHONY : test/test_pipel_euroc.cpp.i
+
+test/test_pipel_euroc.s: test/test_pipel_euroc.cpp.s
+
+.PHONY : test/test_pipel_euroc.s
+
+# target to generate assembly for a file
+test/test_pipel_euroc.cpp.s:
+	$(MAKE) -f CMakeFiles/test_pipel_euroc.dir/build.make CMakeFiles/test_pipel_euroc.dir/test/test_pipel_euroc.cpp.s
+.PHONY : test/test_pipel_euroc.cpp.s
+
 test/test_pipeline.o: test/test_pipeline.cpp.o
 
 .PHONY : test/test_pipeline.o
@@ -941,6 +981,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test_live_vo"
+	@echo "... test_pipel_euroc"
 	@echo "... test_pipeline"
 	@echo "... svo"
 	@echo "... src/camera_model.o"
@@ -1027,6 +1068,9 @@ help:
 	@echo "... test/test_live_vo.o"
 	@echo "... test/test_live_vo.i"
 	@echo "... test/test_live_vo.s"
+	@echo "... test/test_pipel_euroc.o"
+	@echo "... test/test_pipel_euroc.i"
+	@echo "... test/test_pipel_euroc.s"
 	@echo "... test/test_pipeline.o"
 	@echo "... test/test_pipeline.i"
 	@echo "... test/test_pipeline.s"

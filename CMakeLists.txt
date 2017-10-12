@@ -8,7 +8,7 @@ SET(DEBUG_OUTPUT TRUE) # Only relevant if build without ROS
 
 ################################################################################
 
-SET(PROJECT_NAME svo_live)
+SET(PROJECT_NAME svo_edgelete_live)
 PROJECT(${PROJECT_NAME})
 CMAKE_MINIMUM_REQUIRED (VERSION 2.8.3)
 SET(CMAKE_BUILD_TYPE Release) # Release, RelWithDebInfo , Debug
@@ -135,6 +135,9 @@ TARGET_LINK_LIBRARIES(svo ${LINK_LIBS}   ${Pangolin_LIBRARIES})
 
 ADD_EXECUTABLE(test_pipeline test/test_pipeline.cpp)
 TARGET_LINK_LIBRARIES(test_pipeline svo)
+
+ADD_EXECUTABLE(test_pipel_euroc test/test_pipel_euroc.cpp)
+TARGET_LINK_LIBRARIES(test_pipel_euroc svo)
 
 ADD_EXECUTABLE(test_live_vo test/test_live_vo.cpp)
 TARGET_LINK_LIBRARIES(test_live_vo svo)

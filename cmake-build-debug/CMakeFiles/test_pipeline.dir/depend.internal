@@ -69,7 +69,7 @@ CMakeFiles/test_pipeline.dir/test/test_pipeline.cpp.o
  /home/hyj/ORB_SLAM/Pangolin/include/pangolin/var/varwrapper.h
  /home/hyj/ORB_SLAM/Pangolin/include/pangolin/video/video.h
  /home/hyj/ORB_SLAM/Pangolin/include/pangolin/video/video_output.h
- /home/hyj/slam_project/svo/test/test_pipeline.cpp
+ /home/hyj/slam_project/svo_edgelete/test/test_pipeline.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky

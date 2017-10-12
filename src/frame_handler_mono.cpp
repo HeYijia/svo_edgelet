@@ -211,14 +211,15 @@ void FrameHandlerMono::addImage(const cv::Mat& img, const double timestamp)
                         c);
       }
   }
-/**/
+/*
+ 　//save image
   std::stringstream ss;
   ss<<"img/"<<std::setw( 6 ) << std::setfill( '0' )<<new_frame_->id_<<".jpg";
-  //ss<<"img/"<<new_frame_->id_<<".jpg";
-  //cv::imwrite(ss.str().c_str(), img_new);
+  ss<<"img/"<<new_frame_->id_<<".jpg";
+  cv::imwrite(ss.str().c_str(), img_new);
+*/
   cv::imshow("new_frame",img_new);
   cv::waitKey(1);
-  //usleep(100000);
   }  // end debuge
 
   // set last frame

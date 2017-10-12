@@ -738,7 +738,7 @@ vector
 pangolin/video/video.h
 -
 
-/home/hyj/slam_project/svo/test/test_live_vo.cpp
+/home/hyj/slam_project/svo_edgelete/test/test_pipel_euroc.cpp
 svo/config.h
 -
 svo/frame_handler_mono.h

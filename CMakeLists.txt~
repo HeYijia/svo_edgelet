@@ -8,7 +8,7 @@ SET(DEBUG_OUTPUT TRUE) # Only relevant if build without ROS
 
 ################################################################################
 
-SET(PROJECT_NAME svo_live)
+SET(PROJECT_NAME svo_edgelete_live)
 PROJECT(${PROJECT_NAME})
 CMAKE_MINIMUM_REQUIRED (VERSION 2.8.3)
 SET(CMAKE_BUILD_TYPE Release) # Release, RelWithDebInfo , Debug
@@ -68,12 +68,7 @@ LIST(APPEND LINK_LIBS
   ${OpenCV_LIBS}
   ${Sophus_LIBRARIES}
   ${Boost_LIBRARIES}
-  #${fast_LIBRARIES}
 )
-
-
-#INCLUDE_DIRECTORIES(${vikit_common_INCLUDE_DIRS})
-#LIST(APPEND LINK_LIBS ${vikit_common_LIBRARIES})
 
 
 # Set sourcefiles
@@ -91,9 +86,7 @@ LIST(APPEND SOURCEFILES
   src/feature_detection.cpp
   src/depth_filter.cpp
   src/config.cpp
-  #src/sparse_img_align.cpp
 
-  #src/feature_based.cpp
   src/camera_model.cpp
   src/sparse_align.cpp
   src/debug.cpp
@@ -105,9 +98,7 @@ LIST(APPEND SOURCEFILES
   src/fast_10.cpp
   src/faster_corner_10_sse.cpp
 
-  src/client.cpp
   src/slamviewer.cpp
-
   src/five-point.cpp
   src/precomp.cpp
   src/modelest.cpp
@@ -142,8 +133,8 @@ TARGET_LINK_LIBRARIES(svo ${LINK_LIBS}   ${Pangolin_LIBRARIES})
 ################################################################################
 # TESTS
 
-#ADD_EXECUTABLE(test_pipeline test/test_pipeline.cpp)
-#TARGET_LINK_LIBRARIES(test_pipeline svo)
+ADD_EXECUTABLE(test_pipeline test/test_pipeline.cpp)
+TARGET_LINK_LIBRARIES(test_pipeline svo)
 
 ADD_EXECUTABLE(test_live_vo test/test_live_vo.cpp)
 TARGET_LINK_LIBRARIES(test_live_vo svo)

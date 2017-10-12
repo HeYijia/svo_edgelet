@@ -81,18 +81,19 @@ public:
 BenchmarkNode::BenchmarkNode()
 {
 
-  //tum fr2
-  //cam_ = new svo::PinholeCamera(640, 480, 520.9,521.0,325.1,249.7,0.2312,-0.7849,-0.0033,-0.0001,0.9172);
-  //fr1
-  cam_ = new svo::PinholeCamera(640, 480, 517.3,516.5,318.6,	255.3,	0.2624,	-0.9531,-0.0054,0.0026,	1.1633);
-  // my
+  //tum rgbd dataset fr2
+  cam_ = new svo::PinholeCamera(640, 480, 520.9,521.0,325.1,249.7,0.2312,-0.7849,-0.0033,-0.0001,0.9172);
+  //tum rgbd dataset fr1
+  //cam_ = new svo::PinholeCamera(640, 480, 517.3,516.5,318.6,	255.3,	0.2624,	-0.9531,-0.0054,0.0026,	1.1633);
+
+  // my camera
   //cam_ = new svo::PinholeCamera(640, 480, 446.867338 ,446.958766, 298.082779, 234.334299, -0.324849, 0.1205156, -0.000186, -0.000821);
-  // ICL
+  // ICL dataset
   //cam_ = new svo::PinholeCamera(640, 480, 481.20, 480.00, 319.50, 239.50);
 
   // kitti
   //cam_ = new svo::PinholeCamera(1226, 370, 707.0912, 707.0912, 601.8873, 183.1104);
-  // tum mono
+  // tum mono dataset
   //cam_ = new svo::PinholeCamera(1226, 370, 707.0912, 707.0912, 601.8873, 183.1104);
   vo_ = new svo::FrameHandlerMono(cam_);
   vo_->start();
@@ -119,7 +120,7 @@ void BenchmarkNode::runFromFolder()
 #ifdef TXTREAD
   std::vector<std::string> vstrImageFilenames;
   std::vector<double> vTimestamps;
-  std::string filepath = std::string("/media/hyj/dataset/datasets/freiburg1_desk");
+  std::string filepath = std::string("/media/hyj/dataset/datasets/freiburg2_desk");
   std::string strFile = filepath + "/rgb.txt";
   LoadImages(strFile, vstrImageFilenames, vTimestamps);
 
@@ -146,9 +147,7 @@ void BenchmarkNode::runFromFolder()
 
           }
   }
-
-#endif
-#ifndef   TXTREAD
+#else TXTREAD
   for(int img_id =10; img_id < 2700; ++img_id)
   {
     // load image

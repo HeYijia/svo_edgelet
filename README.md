@@ -1,4 +1,10 @@
-# SVO_AR
+# SVO_edgelete
+ChangeList， compare with the origin svo:
+1. add edgelete feature
+2. inition VO: auto select H model and E model
+3. Keyframe selection 
+4. add pangolin to draw trajectory and remove ROS
+
 ## 安装程序（ubuntu）
 ### 安装依赖项
 * boost - c++ Librairies (thread and system are needed)
@@ -53,9 +59,21 @@
 > 
 > make
 
-## 运行程序
+## Run code
 目前可供测试的程序是test文件夹下的test_pipline和test_live_vo。
 
-test_pipline是从文件夹获取图片。
+Offline datasets：
 
-test_live_vo是实时获取摄像头。
+	To run on tum dataset：test_pipline
+	To run on euroc dataset：test_piplel_euroc
+
+Online camera：test_live_vo
+
+## Results
+
+## Authors
+Yijia He, Institute of Automation, Chinese Academy of Sciences
+
+Wei Wei, Institute of Computing Technology, Chinese Academy of Sciences
+
+Yanan Gao, Institute of Computing Technology, Chinese Academy of Sciences

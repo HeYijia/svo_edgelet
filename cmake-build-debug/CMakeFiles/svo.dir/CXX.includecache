@@ -852,7 +852,7 @@ vector
 pangolin/video/video.h
 -
 
-/home/hyj/slam_project/svo/src/camera_model.cpp
+/home/hyj/slam_project/svo_edgelete/src/camera_model.cpp
 stdio.h
 -
 iostream
@@ -868,13 +868,13 @@ opencv2/opencv.hpp
 svo/camera_model.h
 -
 
-/home/hyj/slam_project/svo/src/config.cpp
+/home/hyj/slam_project/svo_edgelete/src/config.cpp
 vikit/params_helper.h
 -
 svo/config.h
 -
 
-/home/hyj/slam_project/svo/src/debug.cpp
+/home/hyj/slam_project/svo_edgelete/src/debug.cpp
 svo/debug.h
 -
 stdio.h
@@ -882,7 +882,7 @@ stdio.h
 stdexcept
 -
 
-/home/hyj/slam_project/svo/src/depth_filter.cpp
+/home/hyj/slam_project/svo_edgelete/src/depth_filter.cpp
 algorithm
 -
 boost/bind.hpp
@@ -906,13 +906,13 @@ svo/config.h
 svo/feature_detection.h
 -
 
-/home/hyj/slam_project/svo/src/fast_10.cpp
+/home/hyj/slam_project/svo_edgelete/src/fast_10.cpp
 vector
 -
 svo/fast.h
 -
 
-/home/hyj/slam_project/svo/src/fast_10_score.cpp
+/home/hyj/slam_project/svo_edgelete/src/fast_10_score.cpp
 vector
 -
 climits
@@ -920,13 +920,13 @@ climits
 svo/fast.h
 -
 
-/home/hyj/slam_project/svo/src/fast_nonmax_3x3.cpp
+/home/hyj/slam_project/svo_edgelete/src/fast_nonmax_3x3.cpp
 svo/fast.h
 -
 vector
 -
 
-/home/hyj/slam_project/svo/src/faster_corner_10_sse.cpp
+/home/hyj/slam_project/svo_edgelete/src/faster_corner_10_sse.cpp
 svo/fast.h
 -
 svo/corner_10.h
@@ -940,7 +940,7 @@ list
 emmintrin.h
 -
 
-/home/hyj/slam_project/svo/src/feature_alignment.cpp
+/home/hyj/slam_project/svo_edgelete/src/feature_alignment.cpp
 emmintrin.h
 -
 arm_neon.h
@@ -948,7 +948,7 @@ arm_neon.h
 svo/feature_alignment.h
 -
 
-/home/hyj/slam_project/svo/src/feature_detection.cpp
+/home/hyj/slam_project/svo_edgelete/src/feature_detection.cpp
 svo/feature_detection.h
 -
 svo/feature.h
@@ -956,19 +956,19 @@ svo/feature.h
 svo/fast.h
 -
 
-/home/hyj/slam_project/svo/src/five-point.cpp
+/home/hyj/slam_project/svo_edgelete/src/five-point.cpp
 precomp.hpp
-/home/hyj/slam_project/svo/src/precomp.hpp
+/home/hyj/slam_project/svo_edgelete/src/precomp.hpp
 _modelest.h
-/home/hyj/slam_project/svo/src/_modelest.h
+/home/hyj/slam_project/svo_edgelete/src/_modelest.h
 five-point.hpp
-/home/hyj/slam_project/svo/src/five-point.hpp
+/home/hyj/slam_project/svo_edgelete/src/five-point.hpp
 iostream
 -
 complex
 -
 
-/home/hyj/slam_project/svo/src/frame.cpp
+/home/hyj/slam_project/svo_edgelete/src/frame.cpp
 stdexcept
 -
 svo/frame.h
@@ -986,7 +986,7 @@ emmintrin.h
 arm_neon.h
 -
 
-/home/hyj/slam_project/svo/src/frame_handler_base.cpp
+/home/hyj/slam_project/svo_edgelete/src/frame_handler_base.cpp
 stdlib.h
 -
 Eigen/StdVector
@@ -1008,7 +1008,7 @@ svo/map.h
 svo/point.h
 -
 
-/home/hyj/slam_project/svo/src/frame_handler_mono.cpp
+/home/hyj/slam_project/svo_edgelete/src/frame_handler_mono.cpp
 svo/config.h
 -
 svo/frame_handler_mono.h
@@ -1030,7 +1030,7 @@ svo/depth_filter.h
 svo/bundle_adjustment.h
 -
 
-/home/hyj/slam_project/svo/src/homography.cpp
+/home/hyj/slam_project/svo_edgelete/src/homography.cpp
 svo/homography.h
 -
 opencv2/opencv.hpp
@@ -1038,7 +1038,7 @@ opencv2/opencv.hpp
 stdio.h
 -
 
-/home/hyj/slam_project/svo/src/initialization.cpp
+/home/hyj/slam_project/svo_edgelete/src/initialization.cpp
 svo/config.h
 -
 svo/frame.h
@@ -1060,7 +1060,7 @@ five-point.hpp
 numeric
 -
 
-/home/hyj/slam_project/svo/src/map.cpp
+/home/hyj/slam_project/svo_edgelete/src/map.cpp
 set
 -
 svo/map.h
@@ -1074,7 +1074,7 @@ svo/feature.h
 boost/bind.hpp
 -
 
-/home/hyj/slam_project/svo/src/matcher.cpp
+/home/hyj/slam_project/svo_edgelete/src/matcher.cpp
 cstdlib
 -
 svo/camera_model.h
@@ -1096,15 +1096,15 @@ svo/config.h
 svo/feature_alignment.h
 -
 
-/home/hyj/slam_project/svo/src/math_utils.cpp
+/home/hyj/slam_project/svo_edgelete/src/math_utils.cpp
 svo/math_lib.h
 -
 
-/home/hyj/slam_project/svo/src/modelest.cpp
+/home/hyj/slam_project/svo_edgelete/src/modelest.cpp
 precomp.hpp
-/home/hyj/slam_project/svo/src/precomp.hpp
+/home/hyj/slam_project/svo_edgelete/src/precomp.hpp
 _modelest.h
-/home/hyj/slam_project/svo/src/_modelest.h
+/home/hyj/slam_project/svo_edgelete/src/_modelest.h
 algorithm
 -
 iterator
@@ -1114,7 +1114,7 @@ limits
 iostream
 -
 
-/home/hyj/slam_project/svo/src/point.cpp
+/home/hyj/slam_project/svo_edgelete/src/point.cpp
 stdexcept
 -
 svo/point.h
@@ -1126,7 +1126,7 @@ svo/feature.h
 svo/math_lib.h
 -
 
-/home/hyj/slam_project/svo/src/pose_optimizer.cpp
+/home/hyj/slam_project/svo_edgelete/src/pose_optimizer.cpp
 stdexcept
 -
 svo/pose_optimizer.h
@@ -1142,11 +1142,11 @@ svo/robust_cost.h
 svo/math_lib.h
 -
 
-/home/hyj/slam_project/svo/src/precomp.cpp
+/home/hyj/slam_project/svo_edgelete/src/precomp.cpp
 precomp.hpp
-/home/hyj/slam_project/svo/src/precomp.hpp
+/home/hyj/slam_project/svo_edgelete/src/precomp.hpp
 
-/home/hyj/slam_project/svo/src/reprojector.cpp
+/home/hyj/slam_project/svo_edgelete/src/reprojector.cpp
 algorithm
 -
 stdexcept
@@ -1170,7 +1170,7 @@ boost/thread.hpp
 svo/camera_model.h
 -
 
-/home/hyj/slam_project/svo/src/robust_cost.cpp
+/home/hyj/slam_project/svo_edgelete/src/robust_cost.cpp
 numeric
 -
 algorithm
@@ -1180,21 +1180,21 @@ svo/robust_cost.h
 svo/math_lib.h
 -
 
-/home/hyj/slam_project/svo/src/slamviewer.cpp
+/home/hyj/slam_project/svo_edgelete/src/slamviewer.cpp
 svo/slamviewer.h
-/home/hyj/slam_project/svo/src/svo/slamviewer.h
+/home/hyj/slam_project/svo_edgelete/src/svo/slamviewer.h
 svo/frame.h
-/home/hyj/slam_project/svo/src/svo/frame.h
+/home/hyj/slam_project/svo_edgelete/src/svo/frame.h
 svo/feature.h
-/home/hyj/slam_project/svo/src/svo/feature.h
+/home/hyj/slam_project/svo_edgelete/src/svo/feature.h
 svo/point.h
-/home/hyj/slam_project/svo/src/svo/point.h
+/home/hyj/slam_project/svo_edgelete/src/svo/point.h
 svo/depth_filter.h
-/home/hyj/slam_project/svo/src/svo/depth_filter.h
+/home/hyj/slam_project/svo_edgelete/src/svo/depth_filter.h
 pangolin/gl/gltext.h
-/home/hyj/slam_project/svo/src/pangolin/gl/gltext.h
+/home/hyj/slam_project/svo_edgelete/src/pangolin/gl/gltext.h
 
-/home/hyj/slam_project/svo/src/sparse_align.cpp
+/home/hyj/slam_project/svo_edgelete/src/sparse_align.cpp
 algorithm
 -
 svo/sparse_align.h

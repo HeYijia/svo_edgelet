@@ -3,7 +3,7 @@
 
 CMakeFiles/svo.dir/src/camera_model.cpp.o
  ../include/svo/camera_model.h
- /home/hyj/slam_project/svo/src/camera_model.cpp
+ /home/hyj/slam_project/svo_edgelete/src/camera_model.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -209,10 +209,10 @@ CMakeFiles/svo.dir/src/camera_model.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 CMakeFiles/svo.dir/src/config.cpp.o
  ../include/svo/config.h
- /home/hyj/slam_project/svo/src/config.cpp
+ /home/hyj/slam_project/svo_edgelete/src/config.cpp
 CMakeFiles/svo.dir/src/debug.cpp.o
  ../include/svo/debug.h
- /home/hyj/slam_project/svo/src/debug.cpp
+ /home/hyj/slam_project/svo_edgelete/src/debug.cpp
 CMakeFiles/svo.dir/src/depth_filter.cpp.o
  ../include/svo/camera_model.h
  ../include/svo/config.h
@@ -225,7 +225,7 @@ CMakeFiles/svo.dir/src/depth_filter.cpp.o
  ../include/svo/matcher.h
  ../include/svo/math_lib.h
  ../include/svo/point.h
- /home/hyj/slam_project/svo/src/depth_filter.cpp
+ /home/hyj/slam_project/svo_edgelete/src/depth_filter.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky
@@ -436,23 +436,23 @@ CMakeFiles/svo.dir/src/depth_filter.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 CMakeFiles/svo.dir/src/fast_10.cpp.o
  ../include/svo/fast.h
- /home/hyj/slam_project/svo/src/fast_10.cpp
+ /home/hyj/slam_project/svo_edgelete/src/fast_10.cpp
 CMakeFiles/svo.dir/src/fast_10_score.cpp.o
  ../include/svo/fast.h
- /home/hyj/slam_project/svo/src/fast_10_score.cpp
+ /home/hyj/slam_project/svo_edgelete/src/fast_10_score.cpp
 CMakeFiles/svo.dir/src/fast_nonmax_3x3.cpp.o
  ../include/svo/fast.h
- /home/hyj/slam_project/svo/src/fast_nonmax_3x3.cpp
+ /home/hyj/slam_project/svo_edgelete/src/fast_nonmax_3x3.cpp
 CMakeFiles/svo.dir/src/faster_corner_10_sse.cpp.o
  ../include/svo/corner_10.h
  ../include/svo/fast.h
  ../include/svo/faster_corner_utilities.h
- /home/hyj/slam_project/svo/src/faster_corner_10_sse.cpp
+ /home/hyj/slam_project/svo_edgelete/src/faster_corner_10_sse.cpp
 CMakeFiles/svo.dir/src/feature_alignment.cpp.o
  ../include/svo/debug.h
  ../include/svo/feature_alignment.h
  ../include/svo/global.h
- /home/hyj/slam_project/svo/src/feature_alignment.cpp
+ /home/hyj/slam_project/svo_edgelete/src/feature_alignment.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky
@@ -668,7 +668,7 @@ CMakeFiles/svo.dir/src/feature_detection.cpp.o
  ../include/svo/frame.h
  ../include/svo/global.h
  ../include/svo/math_lib.h
- /home/hyj/slam_project/svo/src/feature_detection.cpp
+ /home/hyj/slam_project/svo_edgelete/src/feature_detection.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky
@@ -881,7 +881,7 @@ CMakeFiles/svo.dir/src/five-point.cpp.o
  ../include/_modelest.h
  ../include/five-point.hpp
  ../include/precomp.hpp
- /home/hyj/slam_project/svo/src/five-point.cpp
+ /home/hyj/slam_project/svo_edgelete/src/five-point.cpp
 CMakeFiles/svo.dir/src/frame.cpp.o
  ../include/svo/camera_model.h
  ../include/svo/config.h
@@ -891,7 +891,7 @@ CMakeFiles/svo.dir/src/frame.cpp.o
  ../include/svo/global.h
  ../include/svo/math_lib.h
  ../include/svo/point.h
- /home/hyj/slam_project/svo/src/frame.cpp
+ /home/hyj/slam_project/svo_edgelete/src/frame.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky
@@ -1113,7 +1113,7 @@ CMakeFiles/svo.dir/src/frame_handler_base.cpp.o
  ../include/svo/math_lib.h
  ../include/svo/point.h
  ../include/svo/ringbuffer.h
- /home/hyj/slam_project/svo/src/frame_handler_base.cpp
+ /home/hyj/slam_project/svo_edgelete/src/frame_handler_base.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky
@@ -1343,7 +1343,7 @@ CMakeFiles/svo.dir/src/frame_handler_mono.cpp.o
  ../include/svo/reprojector.h
  ../include/svo/ringbuffer.h
  ../include/svo/sparse_align.h
- /home/hyj/slam_project/svo/src/frame_handler_mono.cpp
+ /home/hyj/slam_project/svo_edgelete/src/frame_handler_mono.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky
@@ -1555,7 +1555,7 @@ CMakeFiles/svo.dir/src/frame_handler_mono.cpp.o
 CMakeFiles/svo.dir/src/homography.cpp.o
  ../include/svo/homography.h
  ../include/svo/math_lib.h
- /home/hyj/slam_project/svo/src/homography.cpp
+ /home/hyj/slam_project/svo_edgelete/src/homography.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky
@@ -1775,7 +1775,7 @@ CMakeFiles/svo.dir/src/initialization.cpp.o
  ../include/svo/initialization.h
  ../include/svo/math_lib.h
  ../include/svo/point.h
- /home/hyj/slam_project/svo/src/initialization.cpp
+ /home/hyj/slam_project/svo_edgelete/src/initialization.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky
@@ -1993,7 +1993,7 @@ CMakeFiles/svo.dir/src/map.cpp.o
  ../include/svo/map.h
  ../include/svo/math_lib.h
  ../include/svo/point.h
- /home/hyj/slam_project/svo/src/map.cpp
+ /home/hyj/slam_project/svo_edgelete/src/map.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky
@@ -2214,7 +2214,7 @@ CMakeFiles/svo.dir/src/matcher.cpp.o
  ../include/svo/math_lib.h
  ../include/svo/patch_score.h
  ../include/svo/point.h
- /home/hyj/slam_project/svo/src/matcher.cpp
+ /home/hyj/slam_project/svo_edgelete/src/matcher.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky
@@ -2425,7 +2425,7 @@ CMakeFiles/svo.dir/src/matcher.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 CMakeFiles/svo.dir/src/math_utils.cpp.o
  ../include/svo/math_lib.h
- /home/hyj/slam_project/svo/src/math_utils.cpp
+ /home/hyj/slam_project/svo_edgelete/src/math_utils.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky
@@ -2635,7 +2635,7 @@ CMakeFiles/svo.dir/src/math_utils.cpp.o
 CMakeFiles/svo.dir/src/modelest.cpp.o
  ../include/_modelest.h
  ../include/precomp.hpp
- /home/hyj/slam_project/svo/src/modelest.cpp
+ /home/hyj/slam_project/svo_edgelete/src/modelest.cpp
 CMakeFiles/svo.dir/src/point.cpp.o
  ../include/svo/camera_model.h
  ../include/svo/debug.h
@@ -2644,7 +2644,7 @@ CMakeFiles/svo.dir/src/point.cpp.o
  ../include/svo/global.h
  ../include/svo/math_lib.h
  ../include/svo/point.h
- /home/hyj/slam_project/svo/src/point.cpp
+ /home/hyj/slam_project/svo_edgelete/src/point.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky
@@ -2863,7 +2863,7 @@ CMakeFiles/svo.dir/src/pose_optimizer.cpp.o
  ../include/svo/point.h
  ../include/svo/pose_optimizer.h
  ../include/svo/robust_cost.h
- /home/hyj/slam_project/svo/src/pose_optimizer.cpp
+ /home/hyj/slam_project/svo_edgelete/src/pose_optimizer.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky
@@ -3074,7 +3074,7 @@ CMakeFiles/svo.dir/src/pose_optimizer.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 CMakeFiles/svo.dir/src/precomp.cpp.o
  ../include/precomp.hpp
- /home/hyj/slam_project/svo/src/precomp.cpp
+ /home/hyj/slam_project/svo_edgelete/src/precomp.cpp
 CMakeFiles/svo.dir/src/reprojector.cpp.o
  ../include/svo/camera_model.h
  ../include/svo/config.h
@@ -3087,7 +3087,7 @@ CMakeFiles/svo.dir/src/reprojector.cpp.o
  ../include/svo/math_lib.h
  ../include/svo/point.h
  ../include/svo/reprojector.h
- /home/hyj/slam_project/svo/src/reprojector.cpp
+ /home/hyj/slam_project/svo_edgelete/src/reprojector.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky
@@ -3299,7 +3299,7 @@ CMakeFiles/svo.dir/src/reprojector.cpp.o
 CMakeFiles/svo.dir/src/robust_cost.cpp.o
  ../include/svo/math_lib.h
  ../include/svo/robust_cost.h
- /home/hyj/slam_project/svo/src/robust_cost.cpp
+ /home/hyj/slam_project/svo_edgelete/src/robust_cost.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky
@@ -3577,7 +3577,7 @@ CMakeFiles/svo.dir/src/slamviewer.cpp.o
  /home/hyj/ORB_SLAM/Pangolin/include/pangolin/var/varwrapper.h
  /home/hyj/ORB_SLAM/Pangolin/include/pangolin/video/video.h
  /home/hyj/ORB_SLAM/Pangolin/include/pangolin/video/video_output.h
- /home/hyj/slam_project/svo/src/slamviewer.cpp
+ /home/hyj/slam_project/svo_edgelete/src/slamviewer.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky
@@ -3796,7 +3796,7 @@ CMakeFiles/svo.dir/src/sparse_align.cpp.o
  ../include/svo/math_lib.h
  ../include/svo/point.h
  ../include/svo/sparse_align.h
- /home/hyj/slam_project/svo/src/sparse_align.cpp
+ /home/hyj/slam_project/svo_edgelete/src/sparse_align.cpp
  /home/hyj/svo_third_package/Sophus/sophus/se3.h
  /home/hyj/svo_third_package/Sophus/sophus/so3.h
  /usr/include/eigen3/Eigen/Cholesky

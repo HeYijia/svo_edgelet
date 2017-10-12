@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hyj/slam_project/svo_edgelete/test/test_live_vo.cpp" "/home/hyj/slam_project/svo_edgelete/cmake-build-debug/CMakeFiles/test_live_vo.dir/test/test_live_vo.cpp.o"
+  "/home/hyj/slam_project/svo_edgelete/test/test_pipel_euroc.cpp" "/home/hyj/slam_project/svo_edgelete/cmake-build-debug/CMakeFiles/test_pipel_euroc.dir/test/test_pipel_euroc.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

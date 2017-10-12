@@ -6,5 +6,5 @@ CXX_FLAGS = -Wall -D_LINUX -D_REENTRANT -march=native -Wno-unused-variable -Wno-
 
 CXX_DEFINES = -DSVO_DEBUG_OUTPUT -DSVO_TRACE -Dsvo_EXPORTS
 
-CXX_INCLUDES = -I/usr/include/opencv -I/home/hyj/slam_project/svo/include -I/usr/include/eigen3 -I/home/hyj/svo_third_package/Sophus -I/home/hyj/ORB_SLAM/Pangolin/include -I/home/hyj/ORB_SLAM/Pangolin/build/src/include 
+CXX_INCLUDES = -I/usr/include/opencv -I/home/hyj/slam_project/svo_edgelete/include -I/usr/include/eigen3 -I/home/hyj/svo_third_package/Sophus -I/home/hyj/ORB_SLAM/Pangolin/include -I/home/hyj/ORB_SLAM/Pangolin/build/src/include 
 
