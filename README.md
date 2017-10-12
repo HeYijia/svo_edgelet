@@ -1,11 +1,11 @@
-# SVO_edgelete
+# SVO_edgelet
 ChangeList， compare with the origin svo:
 1. add edgelete feature
 2. inition VO: auto select H model and E model
-3. Keyframe selection 
+3. keyframe selection strategy
 4. add pangolin to draw trajectory and remove ROS
 
-## 安装程序（ubuntu）
+## install（ubuntu）
 ### 安装依赖项
 * boost - c++ Librairies (thread and system are needed)
 	> sudo apt-get install libboost-all-dev	
@@ -48,11 +48,11 @@ ChangeList， compare with the origin svo:
 	> 
 	> sudo make install
 
-### 编译
+### Build and Compile
 下载程序到指定路径，程序默认不使用g2o，如果编译的时候想使用g2o，修改cmakerlists.txt：
 >SET(HAVE_G2O TRUE)   #TRUE  FALSE
 
-开始编译：
+compile：
 >mkdir build
 >
 > cmake ..	
@@ -72,7 +72,7 @@ Online camera：test_live_vo
 ## Results
 
 ## Authors
-Yijia He, Institute of Automation, Chinese Academy of Sciences
+Yijia He, Institute of Automation, Chinese A开始编译cademy of Sciences
 
 Wei Wei, Institute of Computing Technology, Chinese Academy of Sciences
 
