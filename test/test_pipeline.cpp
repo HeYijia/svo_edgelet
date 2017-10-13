@@ -117,7 +117,7 @@ BenchmarkNode::~BenchmarkNode()
 #define TXTREAD
 void BenchmarkNode::runFromFolder()
 {
-#ifdef TXTREAD
+#ifdef TXTREAD  // read image filename with txt, TUM rgbd datasets
   std::vector<std::string> vstrImageFilenames;
   std::vector<double> vTimestamps;
   std::string filepath = std::string("/media/hyj/dataset/datasets/freiburg2_desk");
@@ -147,7 +147,7 @@ void BenchmarkNode::runFromFolder()
 
           }
   }
-#else TXTREAD
+#else  // read image filename with id, ICL-NUIM rgbd datasets
   for(int img_id =10; img_id < 2700; ++img_id)
   {
     // load image
