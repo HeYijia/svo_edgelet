@@ -30,17 +30,21 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/calib3d/calib3d.hpp>
 
-using namespace cv; 
+//using namespace cv;
 
-Mat findEssentialMat( InputArray points1, InputArray points2, double focal = 1.0, Point2d pp = Point2d(0, 0), 
-					int method = CV_RANSAC, 
-					double prob = 0.999, double threshold = 1, OutputArray mask = noArray() ); 
+namespace svo {
 
-void decomposeEssentialMat( const Mat & E, Mat & R1, Mat & R2, Mat & t ); 
+cv::Mat findEssentialMat( cv::InputArray points1, cv::InputArray points2, double focal = 1.0, cv::Point2d pp = cv::Point2d(0, 0),
+                                        int method = CV_RANSAC,
+                                        double prob = 0.999, double threshold = 1, cv::OutputArray mask = cv::noArray() );
 
-int recoverPose( const Mat & E, InputArray points1, InputArray points2, Mat & R, Mat & t, 
-					double focal = 1.0, Point2d pp = Point2d(0, 0), 
-					InputOutputArray mask = noArray()); 
+void decomposeEssentialMat( const cv::Mat & E,cv::Mat & R1, cv::Mat & R2, cv::Mat & t );
+
+int recoverPose( const cv::Mat & E, cv::InputArray points1, cv::InputArray points2, cv::Mat & R, cv::Mat & t,
+                                        double focal = 1.0, cv::Point2d pp = cv::Point2d(0, 0),
+                                        cv::InputOutputArray mask = cv::noArray());
+
+}
 
 
 #endif

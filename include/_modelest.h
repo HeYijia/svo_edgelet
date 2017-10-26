@@ -45,6 +45,8 @@
 
 #include "precomp.hpp"
 
+namespace svo {
+
 class CvModelEstimator2
 {
 public:
@@ -76,6 +78,8 @@ protected:
     int maxBasicSolutions;
     bool checkPartialSubsets;
 };
+
+}
 
 #endif // _CV_MODEL_EST_H_
 
