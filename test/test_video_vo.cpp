@@ -41,7 +41,7 @@ class BenchmarkNode
 public:
     BenchmarkNode();
     ~BenchmarkNode();
-    void runFromFolder();
+    void runFromFolder(const std::string & strVideo);
 };
 
 BenchmarkNode::BenchmarkNode()
@@ -74,10 +74,10 @@ BenchmarkNode::~BenchmarkNode()
 }
 
 //#define TXTREAD
-void BenchmarkNode::runFromFolder()
+void BenchmarkNode::runFromFolder(const std::string & strVideo)
 {
 
-    cv::VideoCapture cap(0);  // open the default camera
+    cv::VideoCapture cap(strVideo.c_str());  // open the default camera
 
     if (!cap.isOpened())  // check if we succeeded
         return ;
@@ -89,10 +89,13 @@ void BenchmarkNode::runFromFolder()
         cap.read(image);  // get a new frame from camera
 
         assert(!image.empty());
+
         img_id++;
 
         cv::imshow("origin_image", image);
-        if (cv::waitKey(1) >= 0) break;
+        cv::waitKey(1);
+        //if ( >= 0) break;
+
         if(img_id < 100) continue;
 
         cv::cvtColor(image,image,CV_BGR2GRAY);
@@ -124,9 +127,10 @@ void BenchmarkNode::runFromFolder()
 int main(int argc, char** argv)
 {
 
+    std::string strVideo = argv[1];
 
     BenchmarkNode benchmark;
-    benchmark.runFromFolder();
+    benchmark.runFromFolder(strVideo);
 
     printf("BenchmarkNode finished.\n");
     return 0;

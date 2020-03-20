@@ -11,6 +11,7 @@ namespace svo {
 using namespace std;
 using namespace Eigen;
 
+
 class AbstractCamera
 {
 protected:
