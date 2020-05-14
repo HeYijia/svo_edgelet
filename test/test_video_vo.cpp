@@ -46,13 +46,14 @@ public:
 
 BenchmarkNode::BenchmarkNode()
 {
+  
+    // cam_pinhole_ = new svo::PinholeCamera(640,480,502.961104,503.651566, 284.978460, 247.527333, -0.378740,0.133422, -0.001505, -0.001445);
+    // cam_pinhole_ = new svo::PinholeCamera(640,480,482.62565,480.83271, 323.96419, 261.20336, -0.031563,0.165711,0.001507,-0.00083,-0.18942);
     /*
-    cam_pinhole_ = new svo::PinholeCamera(640,480,502.961104,503.651566, 284.978460, 247.527333,
-                                          -0.378740,0.133422, -0.001505, -0.001445);
     cam_ = new svo::PinholeCamera(640,480,407.763641, 453.693298, 267.111836,247.958895);
-     */
+    */
+    
     cam_ = new svo::PinholeCamera(640,480,482.62565,480.83271, 323.96419, 261.20336, -0.031563,0.165711,0.001507,-0.00083,-0.18942);
-
 
     vo_ = new svo::FrameHandlerMono(cam_);
     vo_->start();
@@ -88,22 +89,23 @@ void BenchmarkNode::runFromFolder(const std::string & strVideo)
         cv::Mat image;
         cap.read(image);  // get a new frame from camera
 
-        assert(!image.empty());
+        // assert(!image.empty());
 
         img_id++;
 
-        cv::imshow("origin_image", image);
-        cv::waitKey(1);
-        //if ( >= 0) break;
-
-        if(img_id < 100) continue;
+        // cv::imshow("origin_image", image);
+        // cv::waitKey(1);
+        if ( image.empty()) {
+            continue;
+        }
+        // if(img_id < 100) continue;
 
         cv::cvtColor(image,image,CV_BGR2GRAY);
-        /*
-        cv::Mat unimg;
-        cam_pinhole_->undistortImage(image,unimg);
-        vo_->addImage(unimg, 0.01*img_id);
-         */
+        
+        // cv::Mat unimg;
+        // cam_pinhole_->undistortImage(image, unimg);
+        // vo_->addImage(unimg, 0.01*img_id);
+
         vo_->addImage(image, 0.01*img_id);
 
         // display tracking quality
@@ -113,10 +115,10 @@ void BenchmarkNode::runFromFolder(const std::string & strVideo)
                       << "#Features: " << vo_->lastNumObservations() << " \n";
             //<< "Proc. Time: " << vo_->lastProcessingTime()*1000 << "ms \n";
             std::cout<<"Frame pose: "<< vo_->lastFrame()->T_f_w_ <<std::endl;
-
         }
-
     }
+
+    cv::waitKey(0);
 
     cap.release();
     return;

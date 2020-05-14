@@ -129,10 +129,10 @@ int FrameHandlerBase::finishFrameProcessingCommon(
   }
 #endif
 
-  if(dropout == RESULT_FAILURE &&
-      (stage_ == STAGE_DEFAULT_FRAME || stage_ == STAGE_RELOCALIZING ))
+  if(dropout == RESULT_FAILURE &&   (stage_ == STAGE_DEFAULT_FRAME || stage_ == STAGE_RELOCALIZING ))
   {
     stage_ = STAGE_RELOCALIZING;
+    // stage_ = STAGE_FIRST_FRAME;
     tracking_quality_ = TRACKING_INSUFFICIENT;
   }
   else if (dropout == RESULT_FAILURE)

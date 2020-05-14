@@ -68,7 +68,7 @@ size_t SparseAlign::run(FramePtr ref_frame, FramePtr cur_frame)
     jacobian_cache_.setZero();
     have_ref_patch_cache_ = false;
     if(verbose_)printf("\nPYRAMID LEVEL %i\n---------------\n", level_);
-    optimize(T_cur_from_ref);
+    optimize(T_cur_from_ref); //fengchen:  核心： 位姿求取
   }
   cur_frame_->T_f_w_ = T_cur_from_ref * ref_frame_->T_f_w_;
 

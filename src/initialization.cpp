@@ -65,7 +65,7 @@ InitResult KltHomographyInit::addFirstFrame(FramePtr frame_ref)
 InitResult KltHomographyInit::addSecondFrame(FramePtr frame_cur)
 {
   //trackKlt(frame_ref_, frame_cur, px_ref_, px_cur_, f_ref_, f_cur_, disparities_);
-  trackKlt(frame_ref_, frame_cur,fts_type_, px_ref_, px_cur_, f_ref_, f_cur_, disparities_,img_prev_,px_prev_);
+  trackKlt(frame_ref_, frame_cur, fts_type_, px_ref_, px_cur_, f_ref_, f_cur_, disparities_,img_prev_,px_prev_);
   SVO_INFO_STREAM("Init: KLT tracked "<< disparities_.size() <<" features");
 
   if(disparities_.size() < Config::initMinTracked())

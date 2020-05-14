@@ -1,5 +1,10 @@
 {
     "files.associations": {
-        "*.ipp": "cpp"
+        "*.ipp": "cpp",
+        "bitset": "cpp",
+        "random": "cpp",
+        "future": "cpp",
+        "memory": "cpp",
+        "optional": "cpp"
     }
 }

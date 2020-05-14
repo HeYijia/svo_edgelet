@@ -1,3 +1,6 @@
 build/
-bin/
-lib/
+bin/test_live_vo
+bin/test_pipel_euroc
+bin/pipeline
+bin/test_video_vo
+lib/libsvo.so
