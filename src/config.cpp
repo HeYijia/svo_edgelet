@@ -80,7 +80,7 @@ Config::Config() :
     max_n_kfs(30),   // 10
     img_imu_delay(0.0),
     max_fts(180),    //120
-    quality_min_fts(30),  //50   //20
+    quality_min_fts(20), //30 //50   //20
     quality_max_drop_fts(40)
 #endif
 {}

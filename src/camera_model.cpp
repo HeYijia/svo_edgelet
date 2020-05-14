@@ -138,7 +138,7 @@ world2cam(const Vector2d& uv) const
 void PinholeCamera::
 undistortImage(const cv::Mat& raw, cv::Mat& rectified)
 {
-  if(distortion_)
+  if(true)
     cv::remap(raw, rectified, undist_map1_, undist_map2_, CV_INTER_LINEAR);
   else
     rectified = raw.clone();

@@ -188,7 +188,13 @@ bool CvModelEstimator2::runRANSAC( const CvMat* m1, const CvMat* m2, CvMat* mode
 }
 
 
-static CV_IMPLEMENT_QSORT( icvSortDistances, int, CV_LT )
+//static CV_IMPLEMENT_QSORT( icvSortDistances, int, CV_LT )
+
+static void
+icvSortDistances( int *array, size_t total, int /*unused*/ )
+{
+   std::sort( &array[0], &array[total] );
+}
 
 bool CvModelEstimator2::runLMeDS( const CvMat* m1, const CvMat* m2, CvMat* model,
                                   CvMat* mask, double confidence, int maxIters )

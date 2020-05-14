@@ -1,2 +1,0 @@
-Options: 
-CMake: 3.7.2@/home/hyj/QT/clion-2017.1.2/bin/cmake/bin/cmake

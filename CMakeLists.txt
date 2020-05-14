@@ -2,7 +2,7 @@
 # user build settings
 
 SET(TRACE TRUE)
-SET(HAVE_G2O false)   #TRUE
+SET(HAVE_G2O false )   #
 
 SET(DEBUG_OUTPUT TRUE) # Only relevant if build without ROS
 
@@ -40,7 +40,7 @@ ENDIF()
 SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -O3 -fsee -fomit-frame-pointer -fno-signed-zeros -fno-math-errno -funroll-loops")
 
 # Add plain cmake packages 
-FIND_PACKAGE(OpenCV REQUIRED)
+FIND_PACKAGE(OpenCV 3 REQUIRED)
 FIND_PACKAGE(Eigen REQUIRED)
 FIND_PACKAGE(Sophus REQUIRED)
 FIND_PACKAGE(Boost REQUIRED COMPONENTS thread system)
@@ -141,3 +141,7 @@ TARGET_LINK_LIBRARIES(test_pipel_euroc svo)
 
 ADD_EXECUTABLE(test_live_vo test/test_live_vo.cpp)
 TARGET_LINK_LIBRARIES(test_live_vo svo)
+
+ADD_EXECUTABLE(test_video_vo test/test_video_vo.cpp)
+TARGET_LINK_LIBRARIES(test_video_vo svo)
+
