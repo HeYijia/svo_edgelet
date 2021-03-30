@@ -36,7 +36,7 @@ public:
 
   /// Return fisher information matrix, i.e. the Hessian of the log-likelihood
   /// at the converged state.
-  Matrix<double, 6, 6> getFisherInformation();
+  Eigen::Matrix<double, 6, 6> getFisherInformation();
 
 protected:
   FramePtr ref_frame_;            //!< reference frame, has depth for gradient pixels.
@@ -46,9 +46,9 @@ protected:
   int max_level_;                 //!< coarsest pyramid level for the alignment.
   int min_level_;                 //!< finest pyramid level for the alignment.
 
-  Matrix<double, D, D>  H_;       //!< Hessian approximation
-  Matrix<double, D, 1>  Jres_;    //!< Jacobian x Residual
-  Matrix<double, D, 1>  x_;       //!< update step
+  Eigen::Matrix<double, D, D>  H_;       //!< Hessian approximation
+  Eigen::Matrix<double, D, 1>  Jres_;    //!< Jacobian x Residual
+  Eigen::Matrix<double, D, 1>  x_;       //!< update step
 
   size_t                n_iter_init_, n_iter_;  //!< Number of Iterations
   size_t               n_meas_;                //!< Number of measurements
@@ -68,17 +68,17 @@ protected:
 
 
   // cache:
-  Matrix<double, 6, Dynamic, ColMajor> jacobian_cache_;
+  Eigen::Matrix<double, 6, Dynamic, ColMajor> jacobian_cache_;
   bool have_ref_patch_cache_;
   cv::Mat ref_patch_cache_;
   std::vector<bool> visible_fts_;
 
   void precomputeReferencePatches();
-  void optimize(SE3& model);
+  void optimize(SE3d& model);
   void reset();
-  double computeResiduals(const SE3& model, bool linearize_system, bool compute_weight_scale = false);
+  double computeResiduals(const SE3d& model, bool linearize_system, bool compute_weight_scale = false);
   int solve();
-  void update (const SE3& old_model, SE3& new_model);
+  void update (const SE3d& old_model, SE3d& new_model);
   void startIteration();
   void finishIteration();
 };

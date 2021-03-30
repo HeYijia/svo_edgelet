@@ -23,7 +23,7 @@
 #include <svo/math_lib.h>
 #include <svo/homography.h>
 
-#include<five-point.hpp>
+#include <opencv2/calib3d.hpp>
 #include <numeric>
 
 namespace svo {
@@ -108,10 +108,10 @@ InitResult KltHomographyInit::addSecondFrame(FramePtr frame_cur)
   double scale = Config::mapScale()/scene_depth_median;
   frame_cur->T_f_w_ = T_cur_from_ref_ * frame_ref_->T_f_w_;
   frame_cur->T_f_w_.translation() =
-      -frame_cur->T_f_w_.rotation_matrix()*(frame_ref_->pos() + scale*(frame_cur->pos() - frame_ref_->pos()));
+      -frame_cur->T_f_w_.rotationMatrix()*(frame_ref_->pos() + scale*(frame_cur->pos() - frame_ref_->pos()));
 
   // For each inlier create 3D point and add feature in both frames
-  SE3 T_world_cur = frame_cur->T_f_w_.inverse();
+  SE3d T_world_cur = frame_cur->T_f_w_.inverse();
 
   for(vector<int>::iterator it=inliers_.begin(); it!=inliers_.end(); ++it)
   {
@@ -310,7 +310,7 @@ void computeHomography(
     double reprojection_threshold,
     vector<int>& inliers,
     vector<Vector3d>& xyz_in_cur,
-    SE3& T_cur_from_ref,
+    SE3d& T_cur_from_ref,
     int method_choose)
 {
   vector<int> outliers;
@@ -345,7 +345,7 @@ void computeHomography(
 
   cv::Point2d pp(0,0);
   double focal = 1;
-  cv::Mat E = svo::findEssentialMat(x1, x2, focal, pp, CV_RANSAC, 0.99, 2.0/focal_length, cv::noArray() );
+  cv::Mat E = cv::findEssentialMat(x1, x2, focal, pp, CV_RANSAC, 0.99, 2.0/focal_length, cv::noArray() );
   std::cout << "=======================findEssentialMat==============================" << std::endl;
   cv::Mat R_cf,t_cf;
   recoverPose(E,x1,x2,R_cf,t_cf,focal,pp);
@@ -356,7 +356,7 @@ void computeHomography(
        R_cf.at<double>(2,0), R_cf.at<double>(2,1), R_cf.at<double>(2,2);
   t<< t_cf.at<double>(0),t_cf.at<double>(1),t_cf.at<double>(2);
 
-  SE3 Tcf(R,t);
+  SE3d Tcf(R,t);
   T_cur_from_ref = Tcf;
 
   svo::computeInliers(f_cur, f_ref,
@@ -368,7 +368,7 @@ void computeHomography(
   //std::cout<<"R: "<<R_cf<<std::endl;
   //std::cout<<"t: "<<t_cf<<std::endl;
   std::cout<<R<<std::endl<<t<<std::endl;
-  std::cout<<"T_cur_from_ref: "<<T_cur_from_ref<<std::endl;
+  // std::cout<<"T_cur_from_ref: "<<T_cur_from_ref<<std::endl;
 
   int depth_error(0);
    for(vector<int>::iterator it=inliers.begin(); it!=inliers.end(); ++it)
@@ -420,7 +420,7 @@ void computeHomography(
         R_cf.at<double>(2,0), R_cf.at<double>(2,1), R_cf.at<double>(2,2);
    t<< t_cf.at<double>(0),t_cf.at<double>(1),t_cf.at<double>(2);
 
-   SE3 Tcf(R,t);
+   SE3d Tcf(R,t);
    T_cur_from_ref = Tcf;
 
    svo::computeInliers(f_cur, f_ref,
@@ -432,7 +432,7 @@ void computeHomography(
    //std::cout<<"R: "<<R_cf<<std::endl;
    //std::cout<<"t: "<<t_cf<<std::endl;
    std::cout<<R<<std::endl<<t<<std::endl;
-   std::cout<<"T_cur_from_ref: "<<T_cur_from_ref<<std::endl;
+  //  std::cout<<"T_cur_from_ref: "<<T_cur_from_ref<<std::endl;
 
    int depth_error(0);
     for(vector<int>::iterator it=inliers.begin(); it!=inliers.end(); ++it)
@@ -460,7 +460,7 @@ void computeHomography(
   svo::Homography Homography(uv_ref, uv_cur, focal_length, reprojection_threshold);
   Homography.computeSE3fromMatches();
  svo::computeInliers(f_cur, f_ref,
-                     Homography.T_c2_from_c1.rotation_matrix(), Homography.T_c2_from_c1.translation(),
+                     Homography.T_c2_from_c1.rotationMatrix(), Homography.T_c2_from_c1.translation(),
                      reprojection_threshold, focal_length,
                      xyz_in_cur, inliers, outliers);
   T_cur_from_ref = Homography.T_c2_from_c1;
@@ -483,9 +483,9 @@ void computeHomography(
   }
   hyj_file.close();
 */
-  std::cout<<T_cur_from_ref.rotation_matrix()<<std::endl;
+  std::cout<<T_cur_from_ref.rotationMatrix()<<std::endl;
   std::cout<<T_cur_from_ref.translation()<<std::endl;
-  std::cout<<"T_cur_from_ref: "<<T_cur_from_ref<<std::endl;
+  // std::cout<<"T_cur_from_ref: "<<T_cur_from_ref<<std::endl;
   SVO_INFO_STREAM("Init: Homography RANSAC "<<inliers.size()<<" inliers.");
 
 #endif

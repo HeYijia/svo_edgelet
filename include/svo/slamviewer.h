@@ -2,7 +2,7 @@
 #define SLAMVIEWER_H
 
 #include "opencv2/core/core.hpp"
-#include <sophus/se3.h>
+#include <sophus/se3.hpp>
 
 #include "pangolin/pangolin.h"
 #include <svo/frame_handler_mono.h>
@@ -30,8 +30,8 @@ private:
    svo::FrameHandlerMono* _vo;
 
   std::mutex mMutexCurrentPose;
-  std::vector< Sophus::SE3 > _pos;
-  Sophus::SE3  _CurrentPoseTwc ;
+  std::vector< Sophus::SE3d > _pos;
+  Sophus::SE3d  _CurrentPoseTwc ;
   int _drawedframeID=0;
 
   void SetFinish();

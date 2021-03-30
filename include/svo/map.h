@@ -32,8 +32,8 @@ class Seed;
 class MapPointCandidates
 {
 public:
-  typedef pair<Point*, Feature*> PointCandidate;
-  typedef list<PointCandidate> PointCandidateList;
+  typedef std::pair<Point*, Feature*> PointCandidate;
+  typedef std::list<PointCandidate> PointCandidateList;
 
   /// The depth-filter is running in a parallel thread and fills the canidate list.
   /// This mutex controls concurrent access to point_candidates.
@@ -42,7 +42,7 @@ public:
   /// Candidate points are created from converged seeds.
   /// Until the next keyframe, these points can be used for reprojection and pose optimization.
   PointCandidateList candidates_;
-  list< Point* > trash_points_;
+  std::list< Point* > trash_points_;
 
   MapPointCandidates();
   ~MapPointCandidates();
@@ -71,8 +71,8 @@ public:
 class Map : boost::noncopyable
 {
 public:
-  list< FramePtr > keyframes_;          //!< List of keyframes in the map.
-  list< Point* > trash_points_;         //!< A deleted point is moved to the trash bin. Now and then this is cleaned. One reason is that the visualizer must remove the points also.
+  std::list< FramePtr > keyframes_;          //!< List of keyframes in the map.
+  std::list< Point* > trash_points_;         //!< A deleted point is moved to the trash bin. Now and then this is cleaned. One reason is that the visualizer must remove the points also.
   MapPointCandidates point_candidates_;
 
   Map();
@@ -97,7 +97,7 @@ public:
   void addKeyframe(FramePtr new_keyframe);
 
   /// Given a frame, return all keyframes which have an overlapping field of view.
-  void getCloseKeyframes(const FramePtr& frame, list< pair<FramePtr,double> >& close_kfs) const;
+  void getCloseKeyframes(const FramePtr& frame, std::list< std::pair<FramePtr,double> >& close_kfs) const;
 
   /// Return the keyframe which is spatially closest and has overlapping field of view.
   FramePtr getClosestKeyframe(const FramePtr& frame) const;

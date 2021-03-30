@@ -61,7 +61,7 @@ size_t SparseAlign::run(FramePtr ref_frame, FramePtr cur_frame)
   jacobian_cache_.resize(Eigen::NoChange, ref_patch_cache_.rows*patch_area_); // n x 16
   visible_fts_.resize(ref_patch_cache_.rows, false); // TODO: should it be reset at each level?   // n x 1
 
-  SE3 T_cur_from_ref(cur_frame_->T_f_w_ * ref_frame_->T_f_w_.inverse());
+  SE3d T_cur_from_ref(cur_frame_->T_f_w_ * ref_frame_->T_f_w_.inverse());
 
   for(level_=max_level_; level_>=min_level_; --level_)
   {
@@ -75,10 +75,10 @@ size_t SparseAlign::run(FramePtr ref_frame, FramePtr cur_frame)
   return n_meas_/patch_area_;
 }
 
-Matrix<double, 6, 6> SparseAlign::getFisherInformation()
+Eigen::Matrix<double, 6, 6> SparseAlign::getFisherInformation()
 {
   double sigma_i_sq = 5e-4*255*255; // image noise
-  Matrix<double,6,6> I = H_/sigma_i_sq;
+  Eigen::Matrix<double,6,6> I = H_/sigma_i_sq;
   return I;
 }
 
@@ -109,7 +109,7 @@ void SparseAlign::precomputeReferencePatches()
     const Vector3d xyz_ref((*it)->f*depth);
 
     // evaluate projection jacobian
-    Matrix<double,2,6> frame_jac;
+    Eigen::Matrix<double,2,6> frame_jac;
     Frame::jacobian_xyz2uv(xyz_ref, frame_jac);
 
     // compute bilateral interpolation weights for reference image
@@ -146,7 +146,7 @@ void SparseAlign::precomputeReferencePatches()
 }
 
 double SparseAlign::computeResiduals(
-    const SE3& T_cur_from_ref,
+    const SE3d& T_cur_from_ref,
     bool linearize_system,
     bool compute_weight_scale)
 {
@@ -254,10 +254,10 @@ int SparseAlign::solve()
 }
 
 void SparseAlign::update(
-    const SE3& T_curold_from_ref,
-    SE3& T_curnew_from_ref)
+    const SE3d& T_curold_from_ref,
+    SE3d& T_curnew_from_ref)
 {
-  T_curnew_from_ref =  T_curold_from_ref * SE3::exp(-x_);
+  T_curnew_from_ref =  T_curold_from_ref * SE3d::exp(-x_);
 }
 
 void SparseAlign::startIteration()
@@ -273,7 +273,7 @@ void SparseAlign::finishIteration()
   }
 }
 
-void  SparseAlign::optimize(SE3& model)
+void  SparseAlign::optimize(SE3d& model)
 {
 
   // Compute weight scale
@@ -281,7 +281,7 @@ void  SparseAlign::optimize(SE3& model)
   //  computeResiduals(model, false, true);
 
   // Save the old model to rollback in case of unsuccessful update
-  SE3 old_model(model);
+  SE3d old_model(model);
 
   // perform iterative estimation
   for (iter_ = 0; iter_<n_iter_; ++iter_)
@@ -322,7 +322,7 @@ void  SparseAlign::optimize(SE3& model)
     }
 
     // update the model
-    SE3 new_model;
+    SE3d new_model;
     update(model, new_model);
     old_model = model;
     model = new_model;

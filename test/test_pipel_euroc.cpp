@@ -23,7 +23,7 @@
 #include <svo/math_lib.h>
 #include <svo/camera_model.h>
 #include <opencv2/opencv.hpp>
-#include <sophus/se3.h>
+#include <sophus/se3.hpp>
 #include <iostream>
 
 #include <svo/slamviewer.h>
@@ -179,7 +179,7 @@ void BenchmarkNode::runFromFolder()
                   << "#Features: " << vo_->lastNumObservations() << " \n";
 
         // access the pose of the camera via vo_->lastFrame()->T_f_w_.
-        std::cout<<"Frame pose: "<< vo_->lastFrame()->T_f_w_ <<std::endl;
+        // std::cout<<"Frame pose: "<< vo_->lastFrame()->T_f_w_ <<std::endl;
 
     }
   }

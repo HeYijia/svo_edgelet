@@ -41,7 +41,7 @@ void getWarpMatrixAffine(
     const Vector2d& px_ref,
     const Vector3d& f_ref,
     const double depth_ref,
-    const SE3& T_cur_ref,
+    const SE3d& T_cur_ref,
     const int level_ref,
     Matrix2d& A_cur_ref);
 

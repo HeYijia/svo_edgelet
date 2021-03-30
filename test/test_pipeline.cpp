@@ -23,7 +23,7 @@
 #include <svo/math_lib.h>
 #include <svo/camera_model.h>
 #include <opencv2/opencv.hpp>
-#include <sophus/se3.h>
+#include <sophus/se3.hpp>
 #include <iostream>
 
 #include <svo/slamviewer.h>

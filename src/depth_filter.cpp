@@ -263,7 +263,7 @@ void DepthFilter::updateSeeds(FramePtr frame)
     }
 */
     // check if point is visible in the current image
-    SE3 T_ref_cur = it->ftr->frame->T_f_w_ * frame->T_f_w_.inverse();
+    SE3d T_ref_cur = it->ftr->frame->T_f_w_ * frame->T_f_w_.inverse();
     const Vector3d xyz_f(T_ref_cur.inverse()*(1.0/it->mu * it->ftr->f) );
     if(xyz_f.z() < 0.0)  {
       ++it; // behind the camera
@@ -404,7 +404,7 @@ void DepthFilter::updateSeed(const float x, const float tau2, Seed* seed)
 }
 
 double DepthFilter::computeTau(
-      const SE3& T_ref_cur,
+      const SE3d& T_ref_cur,
       const Vector3d& f,
       const double z,
       const double px_error_angle)

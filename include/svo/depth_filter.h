@@ -34,6 +34,7 @@ class Point;
 /// A seed is a probabilistic depth estimate for a single pixel.
 struct Seed
 {
+  public:
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
   static int batch_counter;
@@ -135,7 +136,7 @@ public:
 
   /// Compute the uncertainty of the measurement.
   static double computeTau(
-      const SE3& T_ref_cur,
+      const SE3d& T_ref_cur,
       const Vector3d& f,
       const double z,
       const double px_error_angle);

@@ -42,7 +42,6 @@ SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -O3 -fsee -fomit-frame-pointer -
 # Add plain cmake packages 
 FIND_PACKAGE(OpenCV REQUIRED)
 FIND_PACKAGE(Eigen REQUIRED)
-FIND_PACKAGE(Sophus REQUIRED)
 FIND_PACKAGE(Boost REQUIRED COMPONENTS thread system)
 
 find_package(Pangolin REQUIRED)
@@ -58,7 +57,6 @@ INCLUDE_DIRECTORIES(
   include
   ${Eigen_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
-  ${Sophus_INCLUDE_DIRS}
   ${Boost_INCLUDE_DIRS}
   ${Pangolin_INCLUDE_DIRS}
 )
@@ -66,7 +64,6 @@ INCLUDE_DIRECTORIES(
 # Set link libraries
 LIST(APPEND LINK_LIBS 
   ${OpenCV_LIBS}
-  ${Sophus_LIBRARIES}
   ${Boost_LIBRARIES}
 )
 
@@ -99,9 +96,6 @@ LIST(APPEND SOURCEFILES
   src/faster_corner_10_sse.cpp
 
   src/slamviewer.cpp
-  src/five-point.cpp
-  src/precomp.cpp
-  src/modelest.cpp
   )
 
 IF(HAVE_G2O)

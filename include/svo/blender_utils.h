@@ -135,8 +135,8 @@ bool getDepthmapNormalAtPoint(
       pts.push_back(cam.cam2world(x,y)*depth.at<float>(y,x));
 
   assert(n_meas == pts.size());
-  Matrix<double, Dynamic, 4> A; A.resize(n_meas, Eigen::NoChange);
-  Matrix<double, Dynamic, 1> b; b.resize(n_meas, Eigen::NoChange);
+  Eigen::Matrix<double, Dynamic, 4> A; A.resize(n_meas, Eigen::NoChange);
+  Eigen::Matrix<double, Dynamic, 1> b; b.resize(n_meas, Eigen::NoChange);
 
   size_t i = 0;
   for(list<Vector3d>::iterator it=pts.begin(); it!=pts.end(); ++it)
@@ -148,7 +148,7 @@ bool getDepthmapNormalAtPoint(
 
   JacobiSVD<MatrixXd> svd(A, ComputeThinU | ComputeThinV);
 
-  Matrix<double, 4, 4> V = svd.matrixV();
+  Eigen::Matrix<double, 4, 4> V = svd.matrixV();
   normal = V.block<3,1>(0,3);
   normal.normalize();
   return true;

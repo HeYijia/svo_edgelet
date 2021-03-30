@@ -109,7 +109,7 @@ void Viewer::DrawKeyFrames(const bool bDrawKF)
   glColor3f(1.0,0.0,0.0);
   for(size_t i = 0; i<_pos.size();i++)
   {
-    Sophus::SE3 Twc = _pos[i];
+    Sophus::SE3d Twc = _pos[i];
     glVertex3d( Twc.translation()[0], Twc.translation()[1], Twc.translation()[2]);
   }
    glEnd();
@@ -241,7 +241,7 @@ void Viewer::GetCurrentOpenGLCameraMatrix(pangolin::OpenGlMatrix &M)
   if(_drawedframeID != 0)  // we have new pose
   {
 
-      Eigen::Matrix3d Rwc =  _CurrentPoseTwc.rotation_matrix();
+      Eigen::Matrix3d Rwc =  _CurrentPoseTwc.rotationMatrix();
       Eigen::Vector3d twc = _CurrentPoseTwc.translation();
 
       M.m[0] = Rwc(0,0);

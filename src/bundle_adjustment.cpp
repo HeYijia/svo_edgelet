@@ -88,9 +88,9 @@ void twoViewBA(
   printf("2-View BA: Error before/after = %f / %f\n", init_error, final_error);
 
   // Update Keyframe Positions
-  frame1->T_f_w_.rotation_matrix() = v_frame1->estimate().rotation().toRotationMatrix();
+  frame1->T_f_w_.rotationMatrix() = v_frame1->estimate().rotation().toRotationMatrix();
   frame1->T_f_w_.translation() = v_frame1->estimate().translation();
-  frame2->T_f_w_.rotation_matrix() = v_frame2->estimate().rotation().toRotationMatrix();
+  frame2->T_f_w_.rotationMatrix() = v_frame2->estimate().rotation().toRotationMatrix();
   frame2->T_f_w_.translation() = v_frame2->estimate().translation();
 
   // Update Mappoint Positions
@@ -312,7 +312,7 @@ void globalBA(Map* map)
   for(list<FramePtr>::iterator it_kf = map->keyframes_.begin();
         it_kf != map->keyframes_.end(); ++it_kf)
   {
-    (*it_kf)->T_f_w_ = SE3( (*it_kf)->v_kf_->estimate().rotation(),
+    (*it_kf)->T_f_w_ = SE3d( (*it_kf)->v_kf_->estimate().rotation(),
                             (*it_kf)->v_kf_->estimate().translation());
     (*it_kf)->v_kf_ = NULL;
     for(Features::iterator it_ftr=(*it_kf)->fts_.begin(); it_ftr!=(*it_kf)->fts_.end(); ++it_ftr)

@@ -6,29 +6,16 @@ ChangeList， compare with the origin svo:
 4. add pangolin to draw trajectory and remove ROS
 
 ## install（ubuntu）
-### 安装依赖项
+
+### Prerequisites
 * boost - c++ Librairies (thread and system are needed)
 	> sudo apt-get install libboost-all-dev	
 * Eigen 3 - Linear algebra
 	> apt-get install libeigen3-dev
+* OpenCV3
 * Sophus - Lie groups
- 	> cd workspace
- 	> 
- 	> git clone https://github.com/strasdat/Sophus.git	
- 	> 
-    > cd Sophus	
-    > 
- 	> <font color=red>git checkout a621ff</font>	
- 	> 
- 	> mkdir build	
- 	> 
- 	> cd build	
- 	> 
- 	> cmake ..	
- 	> 
- 	> make
-
-
+    we have intergrated sophus in our code. Thanks for the code: https://github.com/strasdat/Sophus.git
+ 
 * g2o - General Graph Optimization **OPTIONAL**	
 	Only required if you want to run bundle adjustment. It is not necessary for visual odometry. 
     I suggest an out-of-source build of g2o:
@@ -49,18 +36,17 @@ ChangeList， compare with the origin svo:
 	> sudo make install
 
 ### Build and Compile
-下载程序到指定路径，程序默认不使用g2o，如果编译的时候想使用g2o，修改cmakerlists.txt：
+If you want use g2o,  please set flag in cmakerlists.txt：
 >SET(HAVE_G2O TRUE)   #TRUE  FALSE
 
 compile：
->mkdir build
->
+> mkdir build
+> cd build
 > cmake ..	
-> 
 > make
 
 ## Run code
-目前可供测试的程序是test文件夹下的test_pipline和test_live_vo。
+test file, test_pipline and test_live_vo:
 
 Offline datasets：
 

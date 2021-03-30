@@ -23,7 +23,7 @@
 #include <svo/math_lib.h>
 #include <svo/camera_model.h>
 #include <opencv2/opencv.hpp>
-#include <sophus/se3.h>
+#include <sophus/se3.hpp>
 #include <iostream>
 
 #include <svo/slamviewer.h>
@@ -51,8 +51,8 @@ BenchmarkNode::BenchmarkNode()
                                           -0.378740,0.133422, -0.001505, -0.001445);
     cam_ = new svo::PinholeCamera(640,480,407.763641, 453.693298, 267.111836,247.958895);
      */
-    cam_ = new svo::PinholeCamera(640,480,482.62565,480.83271, 323.96419, 261.20336, -0.031563,0.165711,0.001507,-0.00083,-0.18942);
-
+    // cam_ = new svo::PinholeCamera(640,480,482.62565,480.83271, 323.96419, 261.20336, -0.031563,0.165711,0.001507,-0.00083,-0.18942);
+    cam_ = new svo::PinholeCamera(368, 640, 450., 450., 184.,  320., 0.0, 0.0, 0.0, 0.0, 0.0);
 
     vo_ = new svo::FrameHandlerMono(cam_);
     vo_->start();
@@ -77,7 +77,8 @@ BenchmarkNode::~BenchmarkNode()
 void BenchmarkNode::runFromFolder()
 {
 
-    cv::VideoCapture cap(1);  // open the default camera
+    // cv::VideoCapture cap(1);  // open the default camera
+    cv::VideoCapture cap("/home/heyijia/1.mp4");  // open the default camera
 
     if (!cap.isOpened())  // check if we succeeded
         return ;
@@ -88,14 +89,19 @@ void BenchmarkNode::runFromFolder()
         cv::Mat image;
         cap.read(image);  // get a new frame from camera
 
+        // std::cout <<" image size " << image.size() << std::endl; 
+        // cv::imshow("origin_image", image);
+        // cv::waitKey(0);
+
         assert(!image.empty());
         img_id++;
 
-        cv::imshow("origin_image", image);
-        if (cv::waitKey(1) >= 0) break;
-        if(img_id < 100) continue;
+        // cv::imshow("origin_image", image);
+        // if (cv::waitKey(1) >= 0) break;
 
         cv::cvtColor(image,image,CV_BGR2GRAY);
+
+ 
         /*
         cv::Mat unimg;
         cam_pinhole_->undistortImage(image,unimg);
@@ -109,7 +115,7 @@ void BenchmarkNode::runFromFolder()
             std::cout << "Frame-Id: " << vo_->lastFrame()->id_ << " \t"
                       << "#Features: " << vo_->lastNumObservations() << " \n";
             //<< "Proc. Time: " << vo_->lastProcessingTime()*1000 << "ms \n";
-            std::cout<<"Frame pose: "<< vo_->lastFrame()->T_f_w_ <<std::endl;
+            // std::cout<<"Frame pose: "<< vo_->lastFrame()->T_f_w_ <<std::endl;
 
         }
 
