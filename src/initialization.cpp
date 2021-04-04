@@ -376,7 +376,8 @@ void computeHomography(
        if( xyz_in_cur[*it].z() < 0)
          depth_error ++;
    }
-   if(depth_error>4)
+    std::cout << "depth error num: "  << depth_error << std::endl;
+   if(depth_error * 1.0/ inliers.size() > 0.3 )
      method_choose = 1;
 /*
   std::ofstream yj_file;
@@ -440,6 +441,7 @@ void computeHomography(
         if( xyz_in_cur[*it].z() < 0)
           depth_error ++;
     }
+    std::cout << "depth error num: "  << depth_error << std::endl;
     if(depth_error>4)
       method_choose = 1;
 

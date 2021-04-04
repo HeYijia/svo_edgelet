@@ -60,7 +60,7 @@ Config::Config() :
     core_n_kfs(3),
     map_scale(1.0),
     grid_size(25),                    // 75
-    init_min_disparity(50.0),
+    init_min_disparity(20.0),
     init_min_tracked(50),
     init_min_inliers(40),
     klt_max_level(4), // 4      //6

@@ -16,6 +16,8 @@ namespace SLAM_VIEWER {
 class Viewer
 {
 public:
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+  
   Viewer(  svo::FrameHandlerMono* vo);
   void run();
   bool CheckFinish();

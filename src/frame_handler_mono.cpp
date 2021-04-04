@@ -114,6 +114,7 @@ FrameHandlerMono::FrameHandlerMono(svo::AbstractCamera* cam) :
 
 void FrameHandlerMono::initialize()
 {
+  SVO_INFO_STREAM("initialize start");
   feature_detection::DetectorPtr feature_detector(
       new feature_detection::FastDetector(
           cam_->width(), cam_->height(), Config::gridSize(), Config::nPyrLevels()));
@@ -126,6 +127,7 @@ void FrameHandlerMono::initialize()
       &MapPointCandidates::newCandidatePoint, &map_.point_candidates_, _1, _2);
   depth_filter_ = new DepthFilter(feature_detector,edge_detector ,depth_filter_cb);
   depth_filter_->startThread();
+  SVO_INFO_STREAM("initialize end");
 }
 
 FrameHandlerMono::~FrameHandlerMono()

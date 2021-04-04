@@ -272,7 +272,7 @@ void Viewer::run()
 {
 
   mbFinished = false;
-  pangolin::CreateWindowAndBind("SVO: trajactory viewer",1024,768);
+  pangolin::CreateWindowAndBind("map and trajectory viewer",1024,768);
 
   glEnable(GL_DEPTH_TEST);
   glEnable(GL_BLEND);
@@ -286,8 +286,8 @@ void Viewer::run()
   pangolin::Var<bool> menuClose("menu.Close",false,false);
 
 
-  std::string ss = "PaoPaoRobot";
-  pangolin::GlText txt = pangolin::GlFont::I().Text(ss.c_str());
+  // std::string ss = "PaoPaoRobot";
+  // pangolin::GlText txt = pangolin::GlFont::I().Text(ss.c_str());
 
   // Define Camera Render Object (for view / scene browsing)
   pangolin::OpenGlRenderState s_cam(
@@ -336,7 +336,7 @@ void Viewer::run()
 
     DrawCurrentCamera(Twc);
 
-    txt.DrawWindow(200,700);
+    // txt.DrawWindow(200,700);
 
     if(menuShowKeyFrames)
     {
