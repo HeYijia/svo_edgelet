@@ -19,6 +19,7 @@ public:
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
   
   Viewer(  svo::FrameHandlerMono* vo);
+  ~Viewer();
   void run();
   bool CheckFinish();
   void DrawKeyFrames(const bool bDrawKF);
@@ -39,6 +40,10 @@ private:
   void SetFinish();
   bool mbFinished;
   std::mutex mMutexFinish;
+
+  bool CheckFinish2();
+  bool mbFinished2;
+  std::mutex mMutexFinish2;
 
   float mKeyFrameSize;
   float mKeyFrameLineWidth;

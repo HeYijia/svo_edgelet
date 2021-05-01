@@ -108,7 +108,7 @@ BenchmarkNode::~BenchmarkNode()
 {
   delete vo_;
   delete cam_;
-  delete cam_pinhole_;
+  // delete cam_pinhole_;
 
   delete viewer_;
   delete viewer_thread_;

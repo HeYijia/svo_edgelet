@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#include <vikit/math_utils.h>
+#include <svo/math_lib.h>
 #include <boost/thread.hpp>
 #include <g2o/core/sparse_optimizer.h>
 #include <g2o/core/block_solver.h>
@@ -71,13 +71,13 @@ void twoViewBA(
     g2oPoint* v_pt = createG2oPoint(pt->pos_, v_id++, false);
     optimizer.addVertex(v_pt);
     pt->v_pt_ = v_pt;
-    g2oEdgeSE3* e = createG2oEdgeSE3(v_frame1, v_pt, vk::project2d((*it_ftr)->f), true, reproj_thresh*Config::lobaRobustHuberWidth());
+    g2oEdgeSE3* e = createG2oEdgeSE3(v_frame1, v_pt, svo::project2d((*it_ftr)->f), true, reproj_thresh*Config::lobaRobustHuberWidth());
     optimizer.addEdge(e);
     edges.push_back(EdgeContainerSE3(e, frame1, *it_ftr)); // TODO feature now links to frame, so we can simplify edge container!
 
     // find at which index the second frame observes the point
     Feature* ftr_frame2 = pt->findFrameRef(frame2);
-    e = createG2oEdgeSE3(v_frame2, v_pt, vk::project2d(ftr_frame2->f), true, reproj_thresh*Config::lobaRobustHuberWidth());
+    e = createG2oEdgeSE3(v_frame2, v_pt, svo::project2d(ftr_frame2->f), true, reproj_thresh*Config::lobaRobustHuberWidth());
     optimizer.addEdge(e);
     edges.push_back(EdgeContainerSE3(e, frame2, ftr_frame2));
   }
@@ -175,7 +175,7 @@ void localBA(
     list<Feature*>::iterator it_obs=(*it_pt)->obs_.begin();
     while(it_obs!=(*it_pt)->obs_.end())
     {
-      Vector2d error = vk::project2d((*it_obs)->f) - vk::project2d((*it_obs)->frame->w2f((*it_pt)->pos_));
+      Vector2d error = svo::project2d((*it_obs)->f) - svo::project2d((*it_obs)->frame->w2f((*it_pt)->pos_));
 
       if((*it_obs)->frame->v_kf_ == NULL)
       {
@@ -190,7 +190,7 @@ void localBA(
 
       // create edge
       g2oEdgeSE3* e = createG2oEdgeSE3((*it_obs)->frame->v_kf_, v_pt,
-                                       vk::project2d((*it_obs)->f),
+                                       svo::project2d((*it_obs)->f),
                                        true,
                                        reproj_thresh_2*Config::lobaRobustHuberWidth(),
                                        1.0 / (1<<(*it_obs)->level));
@@ -288,12 +288,12 @@ void globalBA(Map* map)
 
       // Due to merging of mappoints it is possible that references in kfs suddenly
       // have a very large reprojection error which may result in distorted results.
-      Vector2d error = vk::project2d((*it_ftr)->f) - vk::project2d((*it_kf)->w2f(mp->pos_));
+      Vector2d error = svo::project2d((*it_ftr)->f) - svo::project2d((*it_kf)->w2f(mp->pos_));
       if(error.squaredNorm() > reproj_thresh_1_squared)
         incorrect_edges.push_back(pair<FramePtr,Feature*>(*it_kf, *it_ftr));
       else
       {
-        g2oEdgeSE3* e = createG2oEdgeSE3(v_kf, v_mp, vk::project2d((*it_ftr)->f),
+        g2oEdgeSE3* e = createG2oEdgeSE3(v_kf, v_mp, svo::project2d((*it_ftr)->f),
                                          true,
                                          reproj_thresh_2*Config::lobaRobustHuberWidth());
 
