@@ -13,6 +13,7 @@ Viewer::Viewer( svo::FrameHandlerMono* vo):
 {
 
   mbFinished = false;
+  mbFinished2 = false;
   mViewpointX =  0;
   mViewpointY = -0.7;
   mViewpointZ =  -1.8;
@@ -27,10 +28,24 @@ Viewer::Viewer( svo::FrameHandlerMono* vo):
 
 }
 
+Viewer::~Viewer()
+{
+  SetFinish();
+
+  while (!CheckFinish2())
+    usleep(5000);
+}
+
 bool Viewer::CheckFinish()
 {
     std::unique_lock<std::mutex> lock(mMutexFinish);
     return mbFinished;
+}
+
+bool Viewer::CheckFinish2()
+{
+  std::unique_lock<std::mutex> lock(mMutexFinish2);
+  return mbFinished2;
 }
 
 void Viewer::SetFinish()
@@ -363,6 +378,10 @@ void Viewer::run()
   pangolin::BindToContext("SVO: trajactory viewer");
   std::cout<<"pangolin close"<<std::endl;
 
+  {
+    std::unique_lock<std::mutex> lock(mMutexFinish2);
+    mbFinished2 = true;
+  }
 }
 
 }
